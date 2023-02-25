@@ -24,22 +24,20 @@ def parse_simple(inputfile, outputfile=None):
     # Other data I might encounter, I'll ignore.
     # Convert JSON to pandas dataframe
     
-    with open(inputfile, "r") as f:
-        data = json.load(f)
+    df = pd.read_json(inputfile)
 
-    # normalize the data
-    # Convert JSON to pandas dataframe
-    df = pd.json_normalize(data, record_path=['in_network', 'negotiated_rates', 'negotiated_prices'],
-                        meta=[['in_network', 'name'], ['in_network', 'billing_code'],
-                                ['in_network', 'billing_code_type'], ['in_network', 'billing_code_type_version'],
-                                ['in_network', 'negotiation_arrangement'], ['in_network', 'negotiated_rates', 'provider_references']])
+    # Flatten the nested in_network column
+    in_network_df = pd.json_normalize(df['in_network'], record_path=['negotiated_rates', 'provider_groups'], 
+                                    meta=[['name'], ['negotiation_arrangement'], ['billing_code'], 
+                                            ['description'], ['billing_code_type'], ['billing_code_type_version']])
 
-    # print the normalized data
-    print(df)
-    # Save DataFrame to CSV
-    df.to_csv(outputfile, index=False)
-    
-    return df
+    # Merge the flattened in_network DataFrame with the main DataFrame
+    merged_df = pd.merge(df.drop('in_network', axis=1), in_network_df, how='cross')
+
+    # Save the merged data to a CSV file
+    merged_df.to_csv(outputfile, index=False)
+
+    return merged_df
 
 
 @click.command()

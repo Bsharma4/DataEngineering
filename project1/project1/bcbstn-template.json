@@ -1,0 +1,64 @@
+{
+    "reporting_entity_name": "Blue Cross and Blue Shield of MN and Blue Plus",
+    "reporting_entity_type": "Health Insurance Issuer",
+    "last_updated_on": "2022-10-17",
+    "version": "1.3.1",
+    "in_network": [
+      {
+        "negotiation_arrangement": "ffs",
+        "name": "PATHOLOGY TEST",
+        "billing_code_type": "CPT",
+        "billing_code_type_version": "2022",
+        "billing_code": "81025",
+        "description": "URINE PREGNANCY TEST, BY VISUAL COLOR COMPARISON METHODS",
+        "negotiated_rates": [
+          {
+            "provider_groups": [
+              {
+                "npi": [
+                  1063482875,
+                  1073582375,
+                  1174910236,
+                  1427028174,
+                  1578503306,
+                  1760656037,
+                  1811966500,
+                  1952750952
+                ],
+                "tin": {
+                  "type": "npi",
+                  "value": "1124388723"
+                }
+              },
+              {
+                "npi": [
+                  1447236062
+                ],
+                "tin": {
+                  "type": "npi",
+                  "value": "1861861759"
+                }
+              }
+            ],
+            "negotiated_prices": [
+              {
+                "negotiated_type": "derived",
+                "negotiated_rate": 9.47,
+                "expiration_date": "2023-01-01",
+                "service_code": [
+                  "11",
+                  "81"
+                ],
+                "billing_class": "professional",
+                "billing_code_modifier": [
+                  "KX",
+                  "QW"
+                ],
+                "additional_information": "null"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
