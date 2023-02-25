@@ -1,5 +1,0 @@
-pandas
-click
-pytest
-pytest
-pytest-subtests

@@ -1,4 +1,0 @@
-negotiated_type,negotiated_rate,expiration_date,service_code,billing_class,billing_code_modifier,in_network.name,in_network.billing_code,in_network.billing_code_type,in_network.billing_code_type_version,in_network.negotiation_arrangement,in_network.negotiated_rates.provider_references
-fee schedule,11.64,9999-12-31,['12'],professional,,"HOME HEALTH RESPIRATORY THERAPY, INITIAL EVALUATION",S5180,HCPCS,2022,ffs,330.0000095818
-fee schedule,9.5,9999-12-31,['12'],professional,,"HOME HEALTH RESPIRATORY THERAPY, INITIAL EVALUATION",S5180,HCPCS,2022,ffs,330.000011452
-fee schedule,64.91,9999-12-31,"['12', '11']",professional,['UE'],KNEE ANKLE FOOT ORTHOSIS FULL PLASTIC STATIC PREFABRICATED  (PEDIATRIC SIZE)INCLUDES FITTING AND ADJUSTMENT,L2035,HCPCS,2022,ffs,330.0000095818
